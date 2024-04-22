@@ -45,34 +45,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 
 <body data-bs-theme="dark">
-    <div class="container-float d-flex align-self-center">
-        <div class="align-self-center">
-            <form action="login.php" method="POST">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" name="email" id="email" required>
+    <section style="height: 100vh;">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6"<?php $col=['#0dcaf0','#20c997','#198754','#fd7e14','#6f42c1','#6610f2','#0d6efd']; echo 'style = "background-color:'. $col[array_rand($col,1)] .'50;"'?>>
+                    <div class="d-flex align-items-center h-custom-2 px-5 mt-5 pt-5">
+                        <form style="width: 23rem;">
+                            <h3 class="fw-normal mb-3 pb-3">Log in</h3>
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Email address</label>
+                                <input type="email" id="email" class="form-control form-control"/>
+                            </div>
+                            <div class="mb-3">
+                                <label class="form-label" for="password">Password</label>
+                                <input type="password" id="password" class="form-control form-control"/>
+
+                            </div>
+                            <input type="submit" name="submit_type" value="Login" class="btn btn-primary" />
+                            <input type="submit" name="submit_type" value="Register" class="btn btn-primary" />
+                        </form>
+                    </div>
                 </div>
-                <div class="mb-3">
-                    <label for="pwd" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="pwd" id="pwd" required>
+                <div class="col-sm-6 px-0 d-none d-sm-block">
+                    3d_sim
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+            </div>
         </div>
-        <div class="flex-fill">
-            <form action="login.php" method="POST">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
-                    <input type="text" class="form-control" name="email" id="email" required>
-                </div>
-                <div class="mb-3">
-                    <label for="pwd" class="form-label">Password</label>
-                    <input type="password" class="form-control" name="pwd" id="pwd" required>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
-    </div>
+    </section>
     <?php
     if (isset($error)) {
         echo '<div class="error-container"><p>' . $error . '</p></div>';

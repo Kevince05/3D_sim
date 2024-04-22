@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Creato il: Apr 20, 2024 alle 10:57
--- Versione del server: 10.4.8-MariaDB
--- Versione PHP: 7.3.10
+-- Creato il: Apr 22, 2024 alle 20:58
+-- Versione del server: 10.4.32-MariaDB
+-- Versione PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -33,8 +32,8 @@ CREATE TABLE `log` (
   `mode` set('low','high','verbose') DEFAULT NULL,
   `Fk_Id_user` int(11) NOT NULL,
   `xyz_point` point DEFAULT NULL,
-  `verbose_json_path` text DEFAULT '/db/default_pfp.png'
-) ;
+  `verbose_json_path` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -49,12 +48,18 @@ CREATE TABLE `users` (
   `name` varchar(64) NOT NULL,
   `surname` varchar(64) NOT NULL,
   `last_login` date DEFAULT NULL,
-  'pfp_path' text DEFAULT 
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `pfp_path` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indici per le tabelle scaricate
 --
+
+--
+-- Indici per le tabelle `log`
+--
+ALTER TABLE `log`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indici per le tabelle `users`
