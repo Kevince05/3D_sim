@@ -33,7 +33,7 @@ CREATE TABLE `log` (
   `mode` set('low','high','verbose') DEFAULT NULL,
   `Fk_Id_user` int(11) NOT NULL,
   `xyz_point` point DEFAULT NULL,
-  `verbose_json` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+  `verbose_json_path` text DEFAULT '/db/default_pfp.png'
 ) ;
 
 -- --------------------------------------------------------
@@ -48,7 +48,8 @@ CREATE TABLE `users` (
   `password` varchar(32) NOT NULL,
   `name` varchar(64) NOT NULL,
   `surname` varchar(64) NOT NULL,
-  `last_login` date DEFAULT NULL
+  `last_login` date DEFAULT NULL,
+  'pfp_path' text DEFAULT 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
