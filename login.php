@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <section>
         <div class="container-fluid">
             <div class="row">
-                <div class="col"<?php $col=['#0dcaf0','#20c997','#198754','#fd7e14','#6f42c1','#6610f2','#0d6efd']; echo 'style = "background-color:'. $col[array_rand($col,1)] .'50;"'?>>
+                <div class="col"<?php $col=['#0dcaf0','#20c997','#198754','#fd7e14','#6f42c1','#6610f2','#0d6efd']; echo 'style = "background-color:'. $col[array_rand($col,1)] .'50;"'?> id="loginCol">
                     <div class="d-flex position-relative top-50 start-50 translate-middle">
                         <form class="w-100">
                             <h3 class="fw-normal mb-3 pb-3">Log in</h3>
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     </div>
                 </div>
                 <div class="col-sm-9 px-0">
-                    <canvas id="demo" touch-action="none" style="touch-action: none; -webkit-tap-highlight-color: transparent; height: 100vh; width: 100%;"></canvas>
+                    <canvas id="demo" touch-action="none" style="touch-action: none; outline: none; -webkit-tap-highlight-color: transparent; height: 100vh; width: 100%;"></canvas>
                     <script src="script/scene.js"></script>
                     <script src="script/demo.js"></script>
                 </div>
